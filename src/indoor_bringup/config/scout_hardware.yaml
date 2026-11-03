@@ -1,0 +1,37 @@
+# snn 的 Scout Mini + MID360 参考安装。部署前按实车核对 CAN、网络、外参。
+base:
+  port_name: can_usb
+  is_scout_mini: true
+  is_omni_wheel: false
+  command_timeout: 0.3
+topics:
+  wheel_odom: /wheel_odom
+  custom_cloud: /livox/lidar
+  navigation_cloud: /livox/lidar/pointcloud
+  nav_cmd_vel: /car1/nav_cmd_vel
+  cmd_vel: /cmd_vel
+frames:
+  lidar: livox_frame
+# 来自 snn/slam.yaml，不是当前实车的重新标定结果。
+extrinsics:
+  x: 0.16
+  y: 0.0
+  z: 0.25
+  roll: 0.007
+  pitch: 0.519
+  yaw: 0.0
+localization:
+  package: laser_slam_3d
+  launch: localization.launch.py
+  # 按原定位包实际声明的 launch 参数填写地图路径等；不猜测参数名称。
+  arguments: {}
+guard:
+  command_timeout: 0.25
+  localization_timeout: 0.5
+  wheel_timeout: 0.5
+  cloud_timeout: 0.5
+  tf_timeout: 0.5
+  max_linear_speed: 1.0
+  max_angular_speed: 0.8
+  # 定位器有 Bool 健康输出时填写话题；为空时检查定位消息及 TF 时效。
+  localization_health_topic: ''

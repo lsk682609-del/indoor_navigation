@@ -1,0 +1,15 @@
+# 连续任务：直线、连续转弯、闭环返回；每个目标都有独立超时。
+routes:
+  - name: straight
+    x: 3.0
+    y: 0.0
+    timeout: 60.0
+  - name: two_corners
+    x: 12.0
+    y: 8.0
+    timeout: 180.0
+  - name: return_loop
+    x: 0.0
+    y: 0.0
+    timeout: 180.0
+position_tolerance: 0.3

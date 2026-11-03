@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.7">
+  <world name="indoor_corridors">
+    <gravity>0 0 -9.8</gravity>
+    <physics name="indoor_physics" type="ode">
+      <max_step_size>0.002</max_step_size>
+      <real_time_update_rate>500</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.65 0.65 0.65 1</ambient>
+      <background>0.85 0.85 0.85 1</background>
+    </scene>
+    <light name="indoor_light" type="directional">
+      <pose>0 0 12 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <direction>-0.3 0.1 -0.9</direction>
+    </light>
+    <model name="floor">
+      <static>true</static>
+      <link name="floor_link">
+        <collision name="floor_collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>40 30</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="floor_visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>40 30</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.65 0.68 0.7 1</ambient>
+            <diffuse>0.65 0.68 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="south_wall">
+      <static>true</static>
+      <pose>6 -2 1.25 0 0 0</pose>
+      <link name="wall">
+        <collision name="south_wall_collision">
+          <geometry>
+            <box>
+              <size>16.2 0.2 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="south_wall_visual">
+          <geometry>
+            <box>
+              <size>16.2 0.2 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.75 0.65 1</ambient>
+            <diffuse>0.8 0.75 0.65 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="north_wall">
+      <static>true</static>
+      <pose>6 10 1.25 0 0 0</pose>
+      <link name="wall">
+        <collision name="north_wall_collision">
+          <geometry>
+            <box>
+              <size>16.2 0.2 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="north_wall_visual">
+          <geometry>
+            <box>
+              <size>16.2 0.2 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.75 0.65 1</ambient>
+            <diffuse>0.8 0.75 0.65 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="west_wall">
+      <static>true</static>
+      <pose>-2 4 1.25 0 0 0</pose>
+      <link name="wall">
+        <collision name="west_wall_collision">
+          <geometry>
+            <box>
+              <size>0.2 12 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="west_wall_visual">
+          <geometry>
+            <box>
+              <size>0.2 12 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.75 0.65 1</ambient>
+            <diffuse>0.8 0.75 0.65 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="east_wall">
+      <static>true</static>
+      <pose>14 4 1.25 0 0 0</pose>
+      <link name="wall">
+        <collision name="east_wall_collision">
+          <geometry>
+            <box>
+              <size>0.2 12 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="east_wall_visual">
+          <geometry>
+            <box>
+              <size>0.2 12 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.75 0.65 1</ambient>
+            <diffuse>0.8 0.75 0.65 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="central_room_block">
+      <static>true</static>
+      <pose>6 4 1.25 0 0 0</pose>
+      <link name="wall">
+        <collision name="central_room_block_collision">
+          <geometry>
+            <box>
+              <size>8 4 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="central_room_block_visual">
+          <geometry>
+            <box>
+              <size>8 4 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.75 0.65 1</ambient>
+            <diffuse>0.8 0.75 0.65 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <plugin name="indoor_ground_truth" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/indoor_sim</namespace>
+      </ros>
+      <update_rate>20.0</update_rate>
+    </plugin>
+    <gui>
+      <camera name="indoor_overview">
+        <pose>6 -9 17 0 0.9 1.57</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    <model name="unit_box">
+      <static>true</static>
+      <pose>0.25078220713438226 1.6371800157513827 0.5000000009037804 0 0 0</pose>
+      <link name="box">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

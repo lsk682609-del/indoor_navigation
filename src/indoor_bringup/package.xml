@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>indoor_bringup</name>
+  <version>0.1.0</version>
+  <description>Standalone indoor road-network navigation with the existing small skid-steer vehicle.</description>
+  <maintainer email="lxh@example.com">lxh</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>livox_ros_driver2</depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>gazebo_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>nav2_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>vehicle_gazebo_sim</exec_depend>
+  <exec_depend>nav2_input_bridge</exec_depend>
+  <exec_depend>nav2_net_planner</exec_depend>
+  <exec_depend>nav2_net_system</exec_depend>
+  <exec_depend>nav2_controller</exec_depend>
+  <exec_depend>nav2_a_star_rpp</exec_depend>
+  <exec_depend>nav2_log_record</exec_depend>
+  <exec_depend>nav2_lifecycle_manager</exec_depend>
+  <exec_depend>nav2_map_server</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

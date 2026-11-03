@@ -1,0 +1,41 @@
+# Generated workspaces and runtime data
+/build*/
+/install*/
+/log*/
+/logs/
+/results/*
+!/results/.gitkeep
+real_robot/drivers_ws/build/
+real_robot/drivers_ws/install/
+real_robot/drivers_ws/log/
+real_robot/regression_build/
+real_robot/deps/
+
+# Vendor product manuals are available upstream; keep source and licenses.
+real_robot/drivers_ws/src/ugv_sdk/docs/
+
+# Compiler, Python and editor caches
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+*.o
+*.a
+*.so
+*.so.*
+*.deb
+*.swp
+*~
+.DS_Store
+
+# Machine credentials and recorded sensor data
+.env
+.env.local
+remote_config.json
+*.pem
+*.key
+*.bag
+*.db3
