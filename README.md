@@ -174,3 +174,5 @@ indoor_navigation/
 
 来源及适配范围见 [SOURCE_NOTES.md](docs/SOURCE_NOTES.md)。本次实际验证记录见
 [VALIDATION.md](docs/VALIDATION.md)。
+
+换电脑可使用[统一迁移与验收工具](https://github.com/lsk682609-del/robotics-workstation-restore)，其中包含固定版本、依赖安装、数据备份清单和验收入口。
